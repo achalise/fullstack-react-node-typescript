@@ -5,6 +5,7 @@ import { Landing } from './Landing';
 import { Dashboard } from './Dashboard';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import Navigation from './Navigation';
 
 const App: React.FC<AppProps> = (props: AppProps) => {
   useEffect(() => {
@@ -12,15 +13,15 @@ const App: React.FC<AppProps> = (props: AppProps) => {
     props.fetchUserAsync('9');
   });
   return (
-    <div className="container">
-      <BrowserRouter>
-        <div>
-          <Header />
+    <BrowserRouter>
+      <>
+        <Navigation />
+        <div className="container">
           <Route exact path="/" component={Landing} />
           <Route exact path="/dashboard" component={Dashboard} />
         </div>
-      </BrowserRouter>
-    </div>
+      </>
+    </BrowserRouter>
   );
 };
 
