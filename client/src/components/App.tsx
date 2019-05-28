@@ -1,9 +1,16 @@
-import React from 'react';
-import { Header } from './Header';
+import React, { useEffect, ReactNode } from 'react';
+import Header from './Header';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Landing } from './Landing';
 import { Dashboard } from './Dashboard';
-export const App: React.FC = () => {
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+
+const App: React.FC<AppProps> = (props: AppProps) => {
+  useEffect(() => {
+    props.fetchUser('4');
+    props.fetchUserAsync('9');
+  });
   return (
     <div className="container">
       <BrowserRouter>
@@ -16,3 +23,14 @@ export const App: React.FC = () => {
     </div>
   );
 };
+
+export default connect(
+  null,
+  actions,
+)(App);
+
+interface AppProps {
+  fetchUser: (id: string) => {};
+  fetchUserAsync: (id: string) => {};
+  children?: ReactNode;
+}

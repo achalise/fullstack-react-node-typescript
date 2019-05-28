@@ -15,4 +15,8 @@ export const setUpRoutes = (app: Application) => {
         console.log(`Executing route test`);
         res.send({message: 'hello'});
     });
+    app.get('/api/current-user', (req, res) => {
+      console.log(`Sending current user`);
+      res.send(req.user || {});
+    })
 }
