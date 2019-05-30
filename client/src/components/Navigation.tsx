@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Navigation: React.FC<NavigationProps> = (props) => {
+const Navigation: React.FC<NavigationProps> = (props: NavigationProps) => {
+  console.log(`The props passed in: `, props);
   const userLoggedIn = () => {
     return props.auth && props.auth.id && props.auth.id !== '' ? true : false;
   };
+  console.log(`Is user logged in ? `, userLoggedIn());
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div className="container">
@@ -64,4 +66,5 @@ export default connect(mapStateToProps)(Navigation);
 
 interface NavigationProps {
   auth: { id: string };
+  store?: any;
 }

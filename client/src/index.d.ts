@@ -1,1 +1,1 @@
-declare module 'react-redux-hook';
+declare module 'enzyme-adapter-react-16';
