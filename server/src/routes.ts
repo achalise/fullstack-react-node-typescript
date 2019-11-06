@@ -19,4 +19,9 @@ export const setUpRoutes = (app: Application) => {
       console.log(`Sending current user`);
       res.send(req.user || {});
     })
+    app.get('/api/logout', (req, res) => {
+      console.log(`Logging out the user`);
+      req.logout();
+      res.redirect('/');
+    })
 }

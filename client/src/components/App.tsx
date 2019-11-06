@@ -1,11 +1,11 @@
 import React, { useEffect, ReactNode } from 'react';
-import Header from './Header';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Landing } from './Landing';
 import { Dashboard } from './Dashboard';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Navigation from './Navigation';
+import { Activities } from './activities/Activities';
+import Activity from './Activity/Activity';
 
 const App: React.FC<AppProps> = (props: AppProps) => {
   useEffect(() => {
@@ -17,8 +17,10 @@ const App: React.FC<AppProps> = (props: AppProps) => {
       <>
         <Navigation />
         <div className="container">
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" component={Activities} />
+          <Route exact path="/activities" component={Activities} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/activity" component={Activity} />
         </div>
       </>
     </BrowserRouter>
@@ -33,5 +35,6 @@ export default connect(
 interface AppProps {
   fetchUser: (id: string) => {};
   fetchUserAsync: (id: string) => {};
+
   children?: ReactNode;
 }

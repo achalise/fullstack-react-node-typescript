@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Activities tests Should display the list of activities 1`] = `
+<h1>
+  Activities
+</h1>
+`;

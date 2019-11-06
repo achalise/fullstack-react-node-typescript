@@ -4,10 +4,11 @@ import { createTestStore } from '../test-utils/store-utils';
 import { BrowserRouter } from 'react-router-dom';
 import TestUtils from 'react-dom/test-utils';
 import { shallow, mount } from 'enzyme';
-import { AppState } from '../store/types';
+import { AppState, AuthState } from '../store/types';
 
 const initialState: AppState = {
   auth: { id: '' },
+  activityState: {activities: [], loading: false}
 };
 
 const setUp = (state: AppState): any => {
@@ -30,7 +31,7 @@ describe(`Header Component Tests`, () => {
   it(`Should display Login in Header component when user not logged in`, () => {
     const wrapper = setUp(initialState);
     const nodes = TestUtils.scryRenderedDOMComponentsWithClass(wrapper, 'nav-link');
-    expect(nodes[2].textContent).toEqual('Log in');
+    expect(nodes[2].textContent).toEqual('Log in with Google');
   });
 
   it(`Should display Dashboard in Header component when user logged in`, () => {

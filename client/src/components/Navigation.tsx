@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Navigation: React.FC<NavigationProps> = (props: NavigationProps) => {
-  console.log(`The props passed in: `, props);
   const userLoggedIn = () => {
     return props.auth && props.auth.id && props.auth.id !== '' ? true : false;
   };
@@ -42,8 +41,8 @@ const Navigation: React.FC<NavigationProps> = (props: NavigationProps) => {
                   Dashboard
                 </Link>
               ) : (
-                <a className="nav-link" href="#">
-                Log in
+                <a className="nav-link" href="/auth/google">
+                Log in with Google
               </a>
               )}
             </li>
@@ -52,6 +51,13 @@ const Navigation: React.FC<NavigationProps> = (props: NavigationProps) => {
                 Contact
               </a>
             </li>
+            {userLoggedIn() && (
+            <li className="nav-item">
+              <a className="nav-link" href="/api/logout">
+                Logout
+              </a>
+            </li>
+            )}
           </ul>
         </div>
       </div>

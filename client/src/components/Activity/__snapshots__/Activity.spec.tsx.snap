@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Activity tests Should correctly load the activity entry form 1`] = `
+<label
+  class="col-sm-2 col-form-label"
+  for="name"
+>
+  Name:
+</label>
+`;
+
+exports[`Activity tests Should correctly load the activity entry form 2`] = `
+<label
+  class="col-sm-2 col-form-label"
+  for="type"
+>
+  Type:
+</label>
+`;
+
+exports[`Activity tests Should correctly validate the text input field for name 1`] = `
+<input
+  class="form-control"
+  id="name"
+  name="name"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`Activity tests Should correctly validate the text input field for name 2`] = `
+<div
+  class="error-message"
+>
+  Name must be at least 3 characters
+</div>
+`;

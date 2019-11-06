@@ -1,5 +1,9 @@
 {
     "path-intellisense.mappings": {
       "~": "${workspaceRoot}/src"
-    }
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "prettier.singleQuote": true,
+    "editor.formatOnSave": true,
+    "prettier.arrowParens": true,
   }
