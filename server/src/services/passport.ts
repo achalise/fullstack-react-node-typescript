@@ -1,7 +1,8 @@
 import passport from 'passport';
 import keys from '../../config/keys';
 import { User } from '../models/user';
-import strategy from 'passport-google-oauth20';
+//import strategy from 'passport-google-oauth20';
+const strategy = require('passport-google-oauth20');
 const GoogleStrategy = strategy.Strategy;
 
 
